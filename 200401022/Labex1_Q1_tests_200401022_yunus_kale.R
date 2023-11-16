@@ -71,3 +71,10 @@ test_that("Year adlı sütun numeric değerlerden oluşmalıdır", {
                         "Year adlı sütun numeric değerlerden oluşmamaktadır.")
 })
 
+# 2.14
+test_that("Longitude adlı sütunun 3., 9. ve 10. elementleri negatif numeric değerler içermelidir", {
+  elements_to_check <- c(3, 9, 10)
+  testthat::expect_true(all(maps$Longitude[elements_to_check] < 0), 
+                        "Longitude adlı sütunun belirtilen elemanları negatif numeric değerler içermemektedir.")
+})
+
