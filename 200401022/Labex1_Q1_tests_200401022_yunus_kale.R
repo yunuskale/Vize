@@ -58,3 +58,9 @@ test_that("idx nesnesinin tipi (class'ı) integer'dir", {
   testthat::expect_identical(class(idx), "integer", 
                              info = "idx nesnesinin tipi (class'ı) integer değildir.")
 })
+
+# 2.10
+test_that("Longitude adlı sütun numeric değerlerden oluşmalıdır", {
+  testthat::expect_true(all(is.numeric(maps$Longitude)), 
+                        "Longitude adlı sütun numeric değerlerden oluşmamaktadır.")
+})
