@@ -9,3 +9,6 @@ maps = as.data.frame(maps)
 # 1.3
 maps$Latitude <- as.numeric(gsub("N", "", maps$Latitude))
 
+# 1.4
+idx <- grep("W", maps$Longitude)
+
