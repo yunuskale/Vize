@@ -64,3 +64,10 @@ test_that("Longitude adlı sütun numeric değerlerden oluşmalıdır", {
   testthat::expect_true(all(is.numeric(maps$Longitude)), 
                         "Longitude adlı sütun numeric değerlerden oluşmamaktadır.")
 })
+
+# 2.13
+test_that("Year adlı sütun numeric değerlerden oluşmalıdır", {
+  testthat::expect_true(all(is.numeric(maps$Year)), 
+                        "Year adlı sütun numeric değerlerden oluşmamaktadır.")
+})
+
