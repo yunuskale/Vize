@@ -22,3 +22,6 @@ maps$Year <- as.numeric(gsub("AD", "", maps$Year))
 maps$Longitude <- as.numeric(maps$Longitude)
 maps$Latitude <- as.numeric(maps$Latitude)
 
+# 1.8
+hist(maps$Year, breaks = 10, main = "Histogram of Years", xlab = "Year")
+
