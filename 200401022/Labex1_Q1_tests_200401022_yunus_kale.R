@@ -40,3 +40,9 @@ test_that("maps adlı data.frame'in 5. sütunun adında 'Title' kelimesi geçmel
   testthat::expect_true(any(grepl(expected_keyword, names(maps)[5])), 
                         paste("maps data.frame'in sütun adları arasında '", expected_keyword, "' kelimesi geçmemektedir."))
 })
+
+# 2.9)
+test_that("Latitude adlı sütun numeric değerlerden oluşmalıdır", {
+  testthat::expect_true(all(is.numeric(maps$Latitude)), 
+                        "Latitude adlı sütun numeric değerlerden oluşmamaktadır.")
+})
