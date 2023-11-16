@@ -78,3 +78,25 @@ test_that("Longitude adlı sütunun 3., 9. ve 10. elementleri negatif numeric de
                         "Longitude adlı sütunun belirtilen elemanları negatif numeric değerler içermemektedir.")
 })
 
+# 2.15
+test_that("finalResult adlı değişken vardır, bir data.frame'dir, 3 sütundan oluşmalıdır ve sütun isimleri sırasıyla Longitude, Latitude ve Year olmalıdır", {
+  
+  # finalResult değişkeninin var olup olmadığını kontrol et
+  testthat::expect_true(exists("finalResult", envir = .GlobalEnv), 
+                        "finalResult adlı değişken Global Workspace'te bulunamadı.")
+  
+  # finalResult değişkeninin bir data.frame olup olmadığını kontrol et
+  testthat::expect_true(is.data.frame(finalResult), 
+                        "finalResult adlı değişken bir data.frame değildir.")
+  
+  # finalResult değişkeninin 3 sütundan oluşup oluşmadığını kontrol et
+  testthat::expect_equal(ncol(finalResult), 3, 
+                         info = "finalResult adlı değişkenin 3 sütundan oluşmalıdır.")
+  
+  # finalResult değişkeninin sütun isimlerini kontrol et
+  expected_column_names <- c("Longitude", "Latitude", "Year")
+  testthat::expect_equal(colnames(finalResult), expected_column_names, 
+                         info = "finalResult adlı değişkenin sütun isimleri sırasıyla Longitude, Latitude ve Year olmalıdır.")
+})
+
+
